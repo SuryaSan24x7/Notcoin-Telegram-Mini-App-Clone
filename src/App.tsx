@@ -4,11 +4,11 @@ import Arrow from './icons/Arrow';
 import { bear, coin, highVoltage, notcoin, rocket, trophy } from './images';
 
 const App = () => {
-  const [points, setPoints] = useState(29857775);
-  const [energy, setEnergy] = useState(2532);
+  const [points, setPoints] = useState(0);
+  const [energy, setEnergy] = useState(1000);
   const [clicks, setClicks] = useState<{ id: number, x: number, y: number }[]>([]);
-  const pointsToAdd = 12;
-  const energyToReduce = 12;
+  const pointsToAdd = 1;
+  const energyToReduce = 1;
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (energy - energyToReduce < 0) {
@@ -30,7 +30,7 @@ const App = () => {
   // useEffect hook to restore energy over time
   useEffect(() => {
     const interval = setInterval(() => {
-      setEnergy((prevEnergy) => Math.min(prevEnergy + 1, 6500));
+      setEnergy((prevEnergy) => Math.min(prevEnergy + 1, 10000));
     }, 100); // Restore 10 energy points every second
 
     return () => clearInterval(interval); // Clear interval on component unmount
@@ -70,7 +70,7 @@ const App = () => {
                 <img src={highVoltage} width={44} height={44} alt="High Voltage" />
                 <div className="ml-2 text-left">
                   <span className="text-white text-2xl font-bold block">{energy}</span>
-                  <span className="text-white text-large opacity-75">/ 6500</span>
+                  <span className="text-white text-large opacity-75">/ 10000</span>
                 </div>
               </div>
             </div>
@@ -94,7 +94,7 @@ const App = () => {
             </div>
           </div>
           <div className="w-full bg-[#f9c035] rounded-full mt-4">
-            <div className="bg-gradient-to-r from-[#f3c45a] to-[#fffad0] h-4 rounded-full" style={{ width: `${(energy / 6500) * 100}%` }}></div>
+            <div className="bg-gradient-to-r from-[#f3c45a] to-[#fffad0] h-4 rounded-full" style={{ width: `${(energy / 10000) * 100}%` }}></div>
           </div>
         </div>
 
@@ -113,7 +113,7 @@ const App = () => {
                 }}
                 onAnimationEnd={() => handleAnimationEnd(click.id)}
               >
-                12
+                +1
               </div>
             ))}
           </div>
