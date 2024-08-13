@@ -127,7 +127,7 @@
 
 // export default App;
 import { useState,useEffect } from 'react';
-import { useTonWallet, useTonConnectUI, useTonAddress, useIsConnectionRestored, TonConnectButton } from '@tonconnect/ui-react';
+import { useTonWallet, useTonAddress, useIsConnectionRestored, TonConnectButton } from '@tonconnect/ui-react'; // useTonConnectUI
 import { WalletInfo } from '@tonconnect/ui-react';
 import { bear, coin, highVoltage, notcoin, rocket, trophy } from './images';
 import Arrow from './icons/Arrow';
