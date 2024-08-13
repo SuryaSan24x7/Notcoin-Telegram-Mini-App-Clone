@@ -1,0 +1,14 @@
+{
+    "name": "MyApp",
+    "description": "An example app integrating with TonConnect.",
+    "icons": [
+      "memetap-suryasan24x7s-projects.vercel.app/icon.png"
+    ],
+    "url": "memetap-suryasan24x7s-projects.vercel.app",
+    "scopes": ["basic", "profile"],
+    "theme": {
+      "color": "#ffffff",
+      "backgroundColor": "#000000"
+    }
+  }
+  
