@@ -126,6 +126,8 @@
 // };
 
 // export default App;
+//2
+
 import { useState,useEffect } from 'react';
 import { useTonWallet, useTonAddress, useIsConnectionRestored, TonConnectButton } from '@tonconnect/ui-react'; // useTonConnectUI
 import { WalletInfo } from '@tonconnect/ui-react';

@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "@tonconnect/ui-react": "^2.0.8",
+    "@web3modal/ethers5": "^5.0.11",
+    "ethers": "^5.7.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "web3modal": "^1.9.12"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
