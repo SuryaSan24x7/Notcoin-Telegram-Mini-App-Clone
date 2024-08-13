@@ -126,25 +126,23 @@
 // };
 
 // export default App;
-import { useEffect, useState } from 'react';
-import './index.css';
-import Arrow from './icons/Arrow';
+import { useState,useEffect } from 'react';
+import { useTonWallet, useTonConnectUI, useTonAddress, useIsConnectionRestored, TonConnectButton } from '@tonconnect/ui-react';
+import { WalletInfo } from '@tonconnect/ui-react';
 import { bear, coin, highVoltage, notcoin, rocket, trophy } from './images';
-import { TonConnectButton, useTonAddress, useTonWallet, useTonConnectUI, useIsConnectionRestored } from '@tonconnect/ui-react';
+import Arrow from './icons/Arrow';
 
 const App = () => {
   const [points, setPoints] = useState(0);
   const [energy, setEnergy] = useState(1000);
   const [clicks, setClicks] = useState<{ id: number, x: number, y: number }[]>([]);
-  
-  const userFriendlyAddress = useTonAddress(true); // Get user-friendly TON wallet address
-  const rawAddress = useTonAddress(false); // Get raw TON wallet address
-  const wallet = useTonWallet(); // Get the user's current TON wallet
-  const [tonConnectUI, setOptions] = useTonConnectUI(); // Get TonConnectUI instance and UI options updating function
-  const connectionRestored = useIsConnectionRestored(); // Check if connection has been restored
-
   const pointsToAdd = 1;
   const energyToReduce = 1;
+
+  const userFriendlyAddress = useTonAddress();
+  const rawAddress = useTonAddress(false);
+  const wallet = useTonWallet();
+  const connectionRestored = useIsConnectionRestored();
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (energy - energyToReduce < 0) {
@@ -168,12 +166,12 @@ const App = () => {
     const interval = setInterval(() => {
       setEnergy((prevEnergy) => Math.min(prevEnergy + 1, 10000));
     }, 1000); // Restore 1 energy point every second
-  
+
     return () => clearInterval(interval); // Clear interval on component unmount
   }, []);
 
   if (!connectionRestored) {
-    return <div>Loading... Please wait...</div>; // Show loader if connection is not restored yet
+    return <div>Please wait...</div>;
   }
 
   return (
@@ -187,7 +185,7 @@ const App = () => {
         <div className="fixed top-0 left-0 w-full px-4 pt-8 z-10 flex flex-col items-center text-white">
           <div className="w-full cursor-pointer">
             <div className="bg-[#1f1f1f] text-center py-2 rounded-xl">
-              <TonConnectButton className="my-button-class" style={{ float: "right" }}/>
+              <TonConnectButton className="my-button-class" style={{ float: "right" }} />
             </div>
           </div>
           <div className="mt-12 text-5xl font-bold flex items-center">
@@ -198,20 +196,6 @@ const App = () => {
             <img src={trophy} width={24} height={24} />
             <span className="ml-1">Gold <Arrow size={18} className="ml-0 mb-1 inline-block" /></span>
           </div>
-
-          {userFriendlyAddress && (
-            <div className="mt-4">
-              <div>User-friendly address: {userFriendlyAddress}</div>
-              <div>Raw address: {rawAddress}</div>
-            </div>
-          )}
-
-          {wallet && (
-            <div className="mt-4">
-              <div>Connected wallet: {wallet.name}</div>
-              <div>Device: {wallet.device.appName}</div>
-            </div>
-          )}
         </div>
 
         <div className="fixed bottom-0 left-0 w-full px-4 pb-4 z-10">
@@ -268,6 +252,22 @@ const App = () => {
             ))}
           </div>
         </div>
+
+        {/* Display wallet address */}
+        {userFriendlyAddress && (
+          <div>
+            <span>User-friendly address: {userFriendlyAddress}</span>
+            <span>Raw address: {rawAddress}</span>
+          </div>
+        )}
+
+        {/* Display connected wallet info */}
+        {wallet && (
+          <div>
+            <span>Connected wallet: {(wallet as WalletInfo).name}</span>
+            {/* <span>Device: {(wallet as WalletInfo).device.appName}</span> */}
+          </div>
+        )}
       </div>
     </div>
   );
