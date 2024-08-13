@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './index.css';
 import Arrow from './icons/Arrow';
 import { bear, coin, highVoltage, notcoin, rocket, trophy } from './images';
+import { TonConnectButton } from '@tonconnect/ui-react';
 
 const App = () => {
   const [points, setPoints] = useState(0);
@@ -49,7 +50,7 @@ const App = () => {
         <div className="fixed top-0 left-0 w-full px-4 pt-8 z-10 flex flex-col items-center text-white">
           <div className="w-full cursor-pointer">
             <div className="bg-[#1f1f1f] text-center py-2 rounded-xl">
-              <p className="text-lg">Join squad <Arrow size={18} className="ml-0 mb-1 inline-block" /></p>
+              <p className="text-lg"><TonConnectButton /> <Arrow size={18} className="ml-0 mb-1 inline-block" /></p>
             </div>
           </div>
           <div className="mt-12 text-5xl font-bold flex items-center">
