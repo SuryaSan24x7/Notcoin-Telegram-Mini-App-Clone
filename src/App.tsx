@@ -1,12 +1,7 @@
-import TelegramBot from 'node-telegram-bot-api';
 import { useState, useEffect } from 'react';
 import { useTonWallet, useTonAddress, useIsConnectionRestored, TonConnectButton } from '@tonconnect/ui-react';
 import { bear, coin, highVoltage, notcoin, rocket, trophy } from './images';
 import Arrow from './icons/Arrow';
-
-// Use your actual Telegram bot API key
-const TELEGRAM_BOT_TOKEN = '7246266759:AAFg21RHSsRX2EEDsQUKoNxIGvhLJSqWzcg';
-const bot = new TelegramBot(TELEGRAM_BOT_TOKEN, { polling: true });
 
 const App = () => {
   const [points, setPoints] = useState(0);
@@ -42,17 +37,6 @@ const App = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    // Handle /start command
-    bot.onText(/\/start/, (msg) => {
-      const chatId = msg.chat.id;
-      const userName = msg.from.first_name || 'User';
-      const welcomeMessage = `👋 Welcome, ${userName}, to MemeLord! 🚀\n\n🎮 Tap to earn and enjoy your journey to greatness! 🌟`;
-
-      bot.sendMessage(chatId, welcomeMessage);
-    });
   }, []);
 
   if (!connectionRestored) {
