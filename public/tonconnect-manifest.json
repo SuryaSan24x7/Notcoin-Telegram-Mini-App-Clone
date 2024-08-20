@@ -1,9 +1,12 @@
-{
+{   "url": "memetap-suryasan24x7s-projects.vercel.app",
     "name": "Memelord Tap",
-    "description": "An example app integrating with TonConnect.",
     "icons": [
       "/logo.png"
     ],
-    "url": "memetap-suryasan24x7s-projects.vercel.app"
+    "description": "An example app integrating with TonConnect.",
+      "start_url": ".",
+      "display": "standalone",
+      "theme_color": "#000000",
+      "background_color": "#ffffff"
   }
   

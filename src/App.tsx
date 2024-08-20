@@ -134,6 +134,7 @@ import { WalletInfo } from '@tonconnect/ui-react';
 import { bear, coin, highVoltage, notcoin, rocket, trophy } from './images';
 import Arrow from './icons/Arrow';
 
+
 const App = () => {
   const [points, setPoints] = useState(0);
   const [energy, setEnergy] = useState(1000);
@@ -178,11 +179,12 @@ const App = () => {
 
   return (
     <div className="bg-gradient-main min-h-screen px-4 flex flex-col items-center text-white font-medium">
+      
       <div className="absolute inset-0 h-1/2 bg-gradient-overlay z-0"></div>
       <div className="absolute inset-0 flex items-center justify-center z-0">
         <div className="radial-gradient-overlay"></div>
       </div>
-
+      
       <div className="w-full z-10 min-h-screen flex flex-col items-center text-white">
         <div className="fixed top-0 left-0 w-full px-4 pt-8 z-10 flex flex-col items-center text-white">
           <div className="w-full cursor-pointer">
@@ -234,7 +236,7 @@ const App = () => {
             <div className="bg-gradient-to-r from-[#f3c45a] to-[#fffad0] h-4 rounded-full" style={{ width: `${(energy / 10000) * 100}%` }}></div>
           </div>
         </div>
-        
+     
         <div className="flex-grow flex items-center justify-center">
           <div className="relative mt-4" onClick={handleClick}>
             <img src={notcoin} width={256} height={256} alt="notcoin" />
