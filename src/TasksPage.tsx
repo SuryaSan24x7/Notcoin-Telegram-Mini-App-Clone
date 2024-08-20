@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 
 const tasks = [
   { id: 1, title: 'Follow us on Twitter', completed: false },

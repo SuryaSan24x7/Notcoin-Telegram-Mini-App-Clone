@@ -215,17 +215,17 @@ const App = () => {
               <div className="w-full bg-[#fad258] py-4 rounded-2xl flex justify-around">
                 <button className="flex flex-col items-center gap-1">
                   <img src={bear} width={24} height={24} alt="High Voltage" />
-                  <span>Frens</span>
+                  <span>Connections</span>
                 </button>
                 <div className="h-[48px] w-[2px] bg-[#fddb6d]"></div>
                 <button className="flex flex-col items-center gap-1">
                   <img src={coin} width={24} height={24} alt="High Voltage" />
-                  <span>Earn</span>
+                  <span>Tasks</span>
                 </button>
                 <div className="h-[48px] w-[2px] bg-[#fddb6d]"></div>
                 <button className="flex flex-col items-center gap-1">
                   <img src={rocket} width={24} height={24} alt="High Voltage" />
-                  <span>Boosts</span>
+                  <span>Refer</span>
                 </button>
               </div>
             </div>
@@ -234,7 +234,7 @@ const App = () => {
             <div className="bg-gradient-to-r from-[#f3c45a] to-[#fffad0] h-4 rounded-full" style={{ width: `${(energy / 10000) * 100}%` }}></div>
           </div>
         </div>
-
+        
         <div className="flex-grow flex items-center justify-center">
           <div className="relative mt-4" onClick={handleClick}>
             <img src={notcoin} width={256} height={256} alt="notcoin" />
