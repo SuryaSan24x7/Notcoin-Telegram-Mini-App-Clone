@@ -263,6 +263,8 @@ const App = () => {
             <span>User-friendly address: {userFriendlyAddress}</span>
             <> </>
             <span>Raw address: {rawAddress}</span>
+            <> </>
+            <span>balance: {wallet}</span>
           </div>
         )}
 
