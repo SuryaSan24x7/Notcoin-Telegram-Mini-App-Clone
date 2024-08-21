@@ -1,7 +1,7 @@
 {
-  "name": "OpenMask - TON wallet",
-  "short_name": "OpenMask",
-  "description": "A TON Wallet in your Browser",
-  "version": "0.21.1",
-  "manifest_version": 3
+  "url": "https://memetap-suryasan24x7s-projects.vercel.app",
+  "name": "Demo Dapp with wallet",
+  "iconUrl": "https://ton-connect.github.io/demo-dapp-with-wallet/apple-touch-icon.png",
+  "termsOfUseUrl": "https://ton-connect.github.io/demo-dapp-with-wallet/terms-of-use.txt",
+  "privacyPolicyUrl": "https://ton-connect.github.io/demo-dapp-with-wallet/privacy-policy.txt"
 }
