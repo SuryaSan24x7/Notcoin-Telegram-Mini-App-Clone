@@ -127,7 +127,7 @@
 
 // export default App;
 //2
-
+import {THEME, TonConnectUIProvider} from "@tonconnect/ui-react";
 import { useState,useEffect } from 'react';
 import { useTonWallet, useTonAddress, useIsConnectionRestored, TonConnectButton } from '@tonconnect/ui-react'; // useTonConnectUI
 import { WalletInfo } from '@tonconnect/ui-react';
@@ -136,6 +136,8 @@ import Arrow from './icons/Arrow';
 
 
 const App = () => {
+ 
+  
   const [points, setPoints] = useState(0);
   const [energy, setEnergy] = useState(1000);
   const [clicks, setClicks] = useState<{ id: number, x: number, y: number }[]>([]);
@@ -178,8 +180,12 @@ const App = () => {
   }
 
   return (
+    
     <div className="bg-gradient-main min-h-screen px-4 flex flex-col items-center text-white font-medium">
-      
+       <TonConnectUIProvider manifestUrl="https://memetap-suryasan24x7s-projects.vercel.app/tonconnect-manifest.json"
+  actionsConfiguration={{
+    twaReturnUrl: 'https://t.me/noob_memelord_nbot/start'
+  }}>
       <div className="absolute inset-0 h-1/2 bg-gradient-overlay z-0"></div>
       <div className="absolute inset-0 flex items-center justify-center z-0">
         <div className="radial-gradient-overlay"></div>
@@ -189,6 +195,7 @@ const App = () => {
         <div className="fixed top-0 left-0 w-full px-4 pt-8 z-10 flex flex-col items-center text-white">
           <div className="w-full cursor-pointer">
             <div className="bg-[#1f1f1f] text-center py-2 rounded-xl">
+              
               <TonConnectButton className="my-button-class" style={{ float: "right" }} />
             </div>
           </div>
@@ -273,6 +280,7 @@ const App = () => {
           </div>
         )}
       </div>
+      </TonConnectUIProvider>
     </div>
   );
 };
