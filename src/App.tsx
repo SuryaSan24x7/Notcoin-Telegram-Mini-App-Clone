@@ -261,6 +261,7 @@ const App = () => {
         {userFriendlyAddress && (
           <div>
             <span>User-friendly address: {userFriendlyAddress}</span>
+            <> </>
             <span>Raw address: {rawAddress}</span>
           </div>
         )}
