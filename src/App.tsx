@@ -183,6 +183,7 @@ const App = () => {
     
     <div className="bg-gradient-main min-h-screen px-4 flex flex-col items-center text-white font-medium">
        <TonConnectUIProvider manifestUrl="https://memetap-suryasan24x7s-projects.vercel.app/tonconnect-manifest.json"
+       uiPreferences={{theme: THEME.DARK}}
   actionsConfiguration={{
     twaReturnUrl: 'https://t.me/noob_memelord_nbot/start'
   }}>
