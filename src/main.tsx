@@ -5,7 +5,7 @@ import './index.css'
 import { TonConnectUIProvider } from '@tonconnect/ui-react';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <TonConnectUIProvider manifestUrl="https://github.com/OpenProduct/openmask-extension/blob/main/public/manifest.json">
+  <TonConnectUIProvider manifestUrl="https://memetap-suryasan24x7s-projects.vercel.app/tonconnect-manifest.json">
         
  <React.StrictMode>
     <App />
