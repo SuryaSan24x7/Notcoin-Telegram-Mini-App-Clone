@@ -18,6 +18,7 @@
     "node-telegram-bot-api": "^0.66.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.26.1",
     "telegraf": "^4.16.3",
     "web3modal": "^1.9.12"
   },

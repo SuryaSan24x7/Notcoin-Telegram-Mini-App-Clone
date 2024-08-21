@@ -128,12 +128,11 @@
 // export default App;
 //2
 
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useTonWallet, useTonAddress, useIsConnectionRestored, TonConnectButton } from '@tonconnect/ui-react'; // useTonConnectUI
 import { WalletInfo } from '@tonconnect/ui-react';
 import { bear, coin, highVoltage, notcoin, rocket, trophy } from './images';
 import Arrow from './icons/Arrow';
-
 
 const App = () => {
   const [points, setPoints] = useState(0);
@@ -192,11 +191,11 @@ const App = () => {
               <TonConnectButton className="my-button-class" style={{ float: "right" }} />
             </div>
           </div>
-          <div className="mt-12 text-5xl font-bold flex items-center">
+          <div className="mt-12 text-5xl font-bold flex items-center justify-center">
             <img src={coin} width={44} height={44} />
             <span className="ml-2">{points.toLocaleString()}</span>
           </div>
-          <div className="text-base mt-2 flex items-center">
+          <div className="text-base mt-2 flex items-center justify-center">
             <img src={trophy} width={24} height={24} />
             <span className="ml-1">Gold <Arrow size={18} className="ml-0 mb-1 inline-block" /></span>
           </div>
@@ -216,17 +215,17 @@ const App = () => {
             <div className="flex-grow flex items-center max-w-60 text-sm">
               <div className="w-full bg-[#fad258] py-4 rounded-2xl flex justify-around">
                 <button className="flex flex-col items-center gap-1">
-                  <img src={bear} width={24} height={24} alt="High Voltage" />
+                  <img src={bear} width={24} height={24} alt="Bear" />
                   <span>Connections</span>
                 </button>
                 <div className="h-[48px] w-[2px] bg-[#fddb6d]"></div>
                 <button className="flex flex-col items-center gap-1">
-                  <img src={coin} width={24} height={24} alt="High Voltage" />
+                  <img src={coin} width={24} height={24} alt="Coin" />
                   <span>Tasks</span>
                 </button>
                 <div className="h-[48px] w-[2px] bg-[#fddb6d]"></div>
                 <button className="flex flex-col items-center gap-1">
-                  <img src={rocket} width={24} height={24} alt="High Voltage" />
+                  <img src={rocket} width={24} height={24} alt="Rocket" />
                   <span>Refer</span>
                 </button>
               </div>
@@ -239,7 +238,7 @@ const App = () => {
      
         <div className="flex-grow flex items-center justify-center">
           <div className="relative mt-4" onClick={handleClick}>
-            <img src={notcoin} width={256} height={256} alt="notcoin" />
+            <img src={notcoin} className="w-[256px] h-[256px] max-w-full" alt="notcoin" />
             {clicks.map((click) => (
               <div
                 key={click.id}
@@ -259,18 +258,16 @@ const App = () => {
 
         {/* Display wallet address */}
         {userFriendlyAddress && (
-          <div>
+          <div className="mt-4 text-center">
             <span>User-friendly address: {userFriendlyAddress}</span>
-            <> </>
+            <br />
             <span>Raw address: {rawAddress}</span>
-            <> </>
-            <span>balance: {wallet}</span>
           </div>
         )}
 
         {/* Display connected wallet info */}
         {wallet && (
-          <div>
+          <div className="mt-4 text-center">
             <span>Connected wallet: {(wallet as WalletInfo).name}</span>
             {/* <span>Device: {(wallet as WalletInfo).device.appName}</span> */}
           </div>
